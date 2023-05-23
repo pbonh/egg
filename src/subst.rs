@@ -107,6 +107,14 @@ impl Debug for Subst {
     }
 }
 
+impl Iterator for Subst {
+    type Item = (Var, Id);
+
+    fn next(&mut self) -> Option<Self::Item> {
+        self.data.next()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
