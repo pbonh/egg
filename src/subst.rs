@@ -111,7 +111,7 @@ impl Iterator for Subst {
     type Item = (Var, Id);
 
     fn next(&mut self) -> Option<Self::Item> {
-        self.vec.next()
+        self.vec.iter()
     }
 }
 
