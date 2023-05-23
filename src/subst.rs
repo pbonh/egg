@@ -50,7 +50,7 @@ impl Debug for Var {
 ///
 #[derive(Default, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Subst {
-    pub(crate) vec: smallvec::SmallVec<[(Var, Id); 3]>,
+    pub vec: smallvec::SmallVec<[(Var, Id); 3]>,
 }
 
 impl Subst {
@@ -104,14 +104,6 @@ impl Debug for Subst {
             }
         }
         write!(f, "}}")
-    }
-}
-
-impl Iterator for Subst {
-    type Item = (Var, Id);
-
-    fn next(&mut self) -> Option<Self::Item> {
-        self.vec.iter().next().copied()
     }
 }
 
